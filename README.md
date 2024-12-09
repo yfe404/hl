@@ -20,6 +20,7 @@ There are several programs in the repository:
 * `degree` — order vertices by their degree
 * `lcheck` — check labels
 * `ghl` — find O(log n) approximate Hub Labeling
+* `benchmark` — Generates random queries and profile the running times of distance queries for the given graph / labels
 
 ### Build
 
