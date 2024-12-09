@@ -169,7 +169,10 @@ class Graph {
                 if (buf[0] != 'c') return false;
                 while(!feof(file) && fgetc(file) != '\n');
             } else if (buf[0] == 'p') {
-                if (inited) return false; inited = true;
+	      if (inited) {
+		return false;
+	      }
+	      inited = true;
                 if (sscanf(buf, "p sp %lld %lld", &n, &m) != 2) return false;
             } else if (buf[0] == 'a') {
                 if (sscanf(buf, "a %lld %lld %lld", &u, &v, &w) != 3) return false;
@@ -253,7 +256,10 @@ class Graph {
         while (fgets(buf, sizeof(buf), file)) {
             if (buf[0] == '#') {
                 if (sscanf(buf, "# Nodes: %lld Edges: %lld", &n, &m) == 2) {
-                    if (inited) return false; inited = true;
+		  if (inited) {
+		    return false;
+		  }
+		  inited = true;
                 }
                 for (int c = buf[strlen(buf)-1]; c != '\n' && c != EOF; c = fgetc(file));
             } else {
